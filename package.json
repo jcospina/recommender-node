@@ -1,0 +1,31 @@
+{
+  "name": "recommender-node",
+  "version": "1.0.0",
+  "description": "Collaborative Filtering Library for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcospina/recommender-node.git"
+  },
+  "keywords": [
+    "Collaborative",
+    "Recommender",
+    "System"
+  ],
+  "author": "Juan Camilo Ospina <juan.ospina.quintero@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jcospina/recommender-node/issues"
+  },
+  "homepage": "https://github.com/jcospina/recommender-node#readme",
+  "dependencies": {
+    "d3": "^4.8.0",
+    "jsdataframe": "^0.2.0",
+    "kmeans-js": "^0.1.2",
+    "linear-algebra": "^3.1.3",
+    "lodash": "^4.17.4"
+  }
+}
