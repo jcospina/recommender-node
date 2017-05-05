@@ -3,20 +3,20 @@ Sistema de recomendaciones basado en filtrado colaborativo para Node.js.
 El algoritmo implementado se basa en el trabajo de Mehregan Mahdavi y Gilda Moradi Dakhel. El artículo se encuentra disponible en:  
 [Research Gate](https://www.researchgate.net/publication/220980957)
 
-##Instalación
+## Instalación
 
 ```
 npm install recommender-node
 ```
 
-##Primeros pasos
+## Primeros pasos
 
-###Importar el módulo:
+### Importar el módulo:
 ```
 var recommender = require('recommender-node')
 ```
 
-###Cargar el archivo de ratings
+### Cargar el archivo de ratings
 ```
 recommender.setup("path/to/ratings.csv", 20, "/path/to/clusters.json").then(
     (data) => {
@@ -30,7 +30,7 @@ El método setup recibe 3 parámetros:
 * Número de clusters: el algoritmo implementado usa clustering para obtener los usuarios más similares y así realizar la recomendación. Se recomienda un número entre 10 y 20 clusters.
 * La ruta donde se almacenará el archivo de clusters: el algoritmo primero realiza un pre procesamiento para calcular los clusters, esta información se guarda en un archivo con formato JSON.
 
-###Solicitar las recomendaciones
+### Solicitar las recomendaciones
 
 ```
 recommender.recommend(5, 20, "/path/to/clusters.json").then(
@@ -46,7 +46,7 @@ El método recommend recibe 3 parámetros:
 * El número de items a recomendar
 * La ruta del archivo JSON donde se encuentra la información del clustering
 
-##Limitaciones
+## Limitaciones
 
 En su estado actual el módulo de recomendaciones cuenta con las siguientes limitaciones:
 
@@ -56,7 +56,7 @@ En su estado actual el módulo de recomendaciones cuenta con las siguientes limi
 
 Un ejemplo del archivo de ratings se puede encontrar en [data.csv](https://github.com/jcospina/recommender-node/blob/master/dataset/data.csv)
 
-##Dependencias
+## Dependencias
 
 Este módulo fue construido usando las siguientes librerías:
 
@@ -66,7 +66,7 @@ Este módulo fue construido usando las siguientes librerías:
 * [node-kmeans](https://www.npmjs.com/package/node-kmeans)
 
 
-##Autor
+## Autor
 
 MSc. Juan Camilo Ospina Quintero  
 
