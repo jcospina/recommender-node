@@ -1,5 +1,6 @@
 # Filtrado colaborativo para Node.js
-Sistema de recomendaciones basado en filtrado colaborativo para Node.js.  
+Sistema de recomendaciones basado en filtrado colaborativo para Node.js.   
+
 El algoritmo implementado se basa en el trabajo de Mehregan Mahdavi y Gilda Moradi Dakhel. El artículo se encuentra disponible en:  
 [Research Gate](https://www.researchgate.net/publication/220980957)
 
