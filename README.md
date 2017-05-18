@@ -17,6 +17,8 @@ var recommender = require('recommender-node')
 ```
 
 ###Cargar el archivo de ratings
+
+####Desde un CSV
 ```
 recommender.setup("path/to/ratings.csv", 20, "/path/to/clusters.json").then(
     (data) => {
@@ -29,6 +31,29 @@ El método setup recibe 3 parámetros:
 * La ruta del archivo de ratings: debe ser un archivo csv con formato userId,itemId,rating.
 * Número de clusters: el algoritmo implementado usa clustering para obtener los usuarios más similares y así realizar la recomendación. Se recomienda un número entre 10 y 20 clusters.
 * La ruta donde se almacenará el archivo de clusters: el algoritmo primero realiza un pre procesamiento para calcular los clusters, esta información se guarda en un archivo con formato JSON.
+
+####Desde un Array
+
+```
+recommender.setupFromArray(dataArray, 20, "/path/to/clusters.json").then(
+    (data) => {
+        //Hacer algo una vez se cargan los ratings
+    }
+);
+```
+
+El método setupFromArray recibe 3 parámetros:
+* El array de ratings: debe ser un array de objectos, donde cada objecto debe tener el formato: 
+```
+{
+    user:'userId',
+    item:'itemId',
+    rating:'rating'
+}
+```
+* Número de clusters: el algoritmo implementado usa clustering para obtener los usuarios más similares y así realizar la recomendación. Se recomienda un número entre 10 y 20 clusters.
+* La ruta donde se almacenará el archivo de clusters: el algoritmo primero realiza un pre procesamiento para calcular los clusters, esta información se guarda en un archivo con formato JSON.
+
 
 ###Solicitar las recomendaciones
 
@@ -45,6 +70,31 @@ El método recommend recibe 3 parámetros:
 * El id del usuario al que se le quieren hacer las recomendaciones
 * El número de items a recomendar
 * La ruta del archivo JSON donde se encuentra la información del clustering
+
+##Ejemplo
+
+###Configurar el recomendador con un Array de ratings
+
+```
+
+var dataArray = [
+   {user:'1', item:'1',rating:'5'},
+   {user:'1', item:'2',rating:'1'},
+   {user:'1', item:'3',rating:'2'},
+   {user:'2', item:'1',rating:'3'},
+   {user:'2', item:'2',rating:'1'},
+   {user:'3', item:'2',rating:'5'},
+   ...
+   {user:'167', item:'43',rating:'5'}
+];
+
+recommender.setupFromArray(dataArray, 2, "/path/to/clusters.json").then(
+    (data) => {
+        console.log(data);
+    }
+);
+```
+
 
 ##Limitaciones
 
